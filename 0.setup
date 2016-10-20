@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for file in `cat raw_data_files.txt`
+do
+		orphan=`echo $file | sed "s/fastq/orphaned.fastq/g"`
+		forward=`echo $file | sed "s/fastq/forward.fastq/g"`
+		reverse=`echo $file | sed "s/fastq/reverse.fastq/g"`
+		split-paired-reads.py -0 $orphan -1 $forward -2 $reverse --gzip $file
+done

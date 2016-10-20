@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cat << EOF
+to connect to this notebook, use the following command on
+your client machine:
+
+ssh -N -f -L localhost:8888:localhost:8889 $USER@128.208.236.235
+
+then point your web browser to http://localhost:8888
+
+
+
+EOF
+
+jupyter-notebook --no-browser --port=8889
