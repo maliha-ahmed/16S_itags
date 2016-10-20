@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import string
 import json
 
 def itag_sample_info_parse(filename):
@@ -10,7 +11,9 @@ def itag_sample_info_parse(filename):
 
     for sample in sample_info:
         md = sample['metadata']
-        print "%s\t%s" % (md['sample_name'], md['sequence_unit_name'])
+        forward = string.replace(md['sequence_unit_name'], 'fastq', 'forward.fastq')
+        reverse = string.replace(md['sequence_unit_name'], 'fastq', 'reverse.fastq')
+        print "%s\t%s\t%s\t%s" % (md['sample_name'], md['sequence_unit_name'], forward, reverse)
 
 itag_sample_info_parse('./data/Understanding_methane_cycling_through_manipulation_of_synthetic_methane-oxidizing_communities__Synthetic_methane-oxidizing_com_itags_pl_1_[Synmetcoitagspl1_FD]/itags/16S-V4-V5/2-1525139/sample_data.json')
 itag_sample_info_parse('./data/Understanding_methane_cycling_through_manipulation_of_synthetic_methane-oxidizing_communities__Synthetic_methane-oxidizing_com_itags_pl_2_[Synmetcoitagspl2_FD]/itags/16S-V4-V5/2-1525146/sample_data.json')

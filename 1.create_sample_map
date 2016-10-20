@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./itag_sample_info_parse > $0.txt
