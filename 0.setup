@@ -7,3 +7,7 @@ do
 		reverse=`echo $file | sed "s/fastq/reverse.fastq/g"`
 		split-paired-reads.py -0 $orphan -1 $forward -2 $reverse --gzip $file
 done
+
+mkdir data/itags
+cd data/itags
+ln -s ../*itags*/Raw_Data/* .
