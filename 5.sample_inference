@@ -1,0 +1,3 @@
+#!/bin/bash
+
+R --no-save < 5.sample_inference.R >& 5.sample_inference.log

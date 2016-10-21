@@ -1,0 +1,3 @@
+#!/bin/bash
+
+R --no-save < 4.dereplication.R >& 4.dereplication.log

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+R --no-save < 6.merge_pairs.R >& 6.merge_pairs.log

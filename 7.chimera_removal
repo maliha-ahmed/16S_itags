@@ -1,0 +1,3 @@
+#!/bin/bash
+
+R --no-save < 7.chimera_removal.R >& 7.chimera_removal.log

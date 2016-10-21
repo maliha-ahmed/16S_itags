@@ -1,3 +1,3 @@
 #!/bin/bash
 
-R --no-save < 3.trim_and_filter >& 3.trim_and_filter.log
+R --no-save < 3.trim_and_filter.R >& 3.trim_and_filter.log
