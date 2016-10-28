@@ -9,4 +9,4 @@ dim(seqtab)
 
 table(nchar(colnames(seqtab)))
 
-save(mergers, seqtab, "5.sample_inference.Rd")
+save(mergers, seqtab, file="6.merge_pairs.Rd")

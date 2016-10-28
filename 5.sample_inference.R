@@ -12,4 +12,4 @@ print(plotErrors(dadaRs, nominalQ=TRUE))
 
 dev.off()
 
-save(dadaFs, dadaRs, derepFs, derepRs,  "5.sample_inference.Rd")
+save(dadaFs, dadaRs, derepFs, derepRs,  file="5.sample_inference.Rd")

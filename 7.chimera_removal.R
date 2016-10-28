@@ -7,4 +7,4 @@ dim(seqtab.nochim)
 
 sum(seqtab.nochim)/sum(seqtab)
 
-save(seqtab.nochim, "7.chimera_removal.Rd")
+save(seqtab.nochim, file="7.chimera_removal.Rd")
