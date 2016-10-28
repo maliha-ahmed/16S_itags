@@ -1,0 +1,3 @@
+#!/bin/bash
+
+R --no-save < 8.assign_taxonomy.R >& 8.assign_taxonomy.log
