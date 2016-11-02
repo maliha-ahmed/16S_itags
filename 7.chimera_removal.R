@@ -1,4 +1,4 @@
-source("prelude.cpp")
+source("prelude.R")
 
 load("6.merge_pairs.Rd")
 
