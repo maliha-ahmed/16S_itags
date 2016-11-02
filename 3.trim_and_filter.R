@@ -4,7 +4,7 @@ source("prelude.R")
 
 for(i in seq_along(fnFs)) {
   fastqPairedFilter(c(paste0(path, fnFs[i]), paste0(path, fnRs[i])), c(filtFs[i], filtRs[i]),
-                    trimLeft=c(10, 10), truncLen=c(240,160), 
+                    trimLeft=c(10, 10), truncLen=c(290,290), 
                     maxN=0, maxEE=2, truncQ=2, 
                     compress=TRUE, verbose=TRUE)
 }
