@@ -1,8 +1,11 @@
-#!/bin/bash
+source("prelude.R")
 
-./3.trim_and_filter
-./4.dereplication
-./5.sample_inference
-./6.merge_pairs
-./7.chimera_removal
-./8.assign_taxonomy
+load("6.merge_pairs.Rd")
+
+##write sequences to fasta per sample for usearch otu clustering 
+for (j in seq_len(nrow(seqtab))) {
+	for (i in seq_len(ncol(seqtab))) {
+		if (seqtab[j,i]>0)
+			cat(paste0(">sample=",rownames(seqtab)[j],";seq_",i,";size=",seqtab[j,i],";","\n",colnames(seqtab)[i]),"\n", file=paste0("sample_seqs.fasta"), append=TRUE)
+ 	}
+}
