@@ -11,3 +11,9 @@ done
 mkdir data/itags
 cd data/itags
 ln -s ../*itags*/Raw_Data/* .
+
+echo downloading gold.fa for chimera detection
+if [ ! -e gold.fa ]
+then
+			wget http://drive5.com/uchime/gold.fa
+fi
