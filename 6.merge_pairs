@@ -1,3 +1,5 @@
 #!/bin/bash
 
+\rm -rf data/combined.filtered.fasta
+
 R --no-save < 6.merge_pairs.R >& 6.merge_pairs.log
