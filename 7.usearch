@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source globals.sh
+
+$USEARCH -sortbysize data/combined.filtered.fasta -fastaout data/combined.filtered.sorted.fasta -minsize 2 >& $0.log
+$USEARCH -cluster_otus data/combined.filtered.sorted.fasta -otus data/combined.final.otus.fasta -uparseout data/out.up -relabel OTU -minsize 2 >> $0.log  2>&1
+$USEARCH -usearch_global data/combined.filtered.sorted.fasta -db data/combined.final.otus.fasta -strand plus -id 0.97 -otutabout data/combined.final.otus.xls >> $0.log  2>&1
+
+
+
+

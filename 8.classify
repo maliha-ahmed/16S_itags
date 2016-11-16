@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source globals.sh
+
+FA=data/combined.final.otus.fasta
+XLS=data/combined.final.otus.classified.xls
+
+echo running RDP classifier on OTUs
+echo java -Xmx1g -jar $CLFRJAR classify -g 16srrna $FA -o $XLS
+java -Xmx1g -jar $CLFRJAR classify -g 16srrna $FA -o $XLS
