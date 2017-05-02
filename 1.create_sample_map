@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./itag_sample_info_parse > $0.txt
+echo "You need to perform this step by hand and make sample_info.xls"

@@ -6,15 +6,14 @@ library(ggplot2); packageVersion("ggplot2")
 path <- "data/itags/"
 
 # this file has all the filenames, barcodes and sample namess
-sample.map <- read.table("1.create_sample_map.txt", header=F, sep='\t', col.names=c("sample", "filename", "forward", "reverse"),  colClasses = "character")
-sample.map$barcode <- sapply(strsplit(sample.map$filename, ".", fixed=T), `[`, 4)
+sample.map <- read.table("sample_info.xls", header=T, sep='\t', col.names=c("sample", "barcode", "linker", "barcode_name", "project_name", "description", "forward", "reverse") ,  colClasses = "character")
 head(sample.map)
 
 # select out the forward and reverse
-fnFs <- sample.map$forward
+fnFs <- unique(sample.map$forward)
 head(fnFs)
 
-fnRs <- sample.map$reverse
+fnRs <- unique(sample.map$reverse)
 head(fnRs)
 
 # filtered filenames

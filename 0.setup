@@ -1,14 +1,5 @@
 #!/bin/bash
 
-for file in `cat raw_data_files.txt`
-do
-		orphan=`echo $file | sed "s/fastq/orphaned.fastq/g"`
-		forward=`echo $file | sed "s/fastq/forward.fastq/g"`
-		reverse=`echo $file | sed "s/fastq/reverse.fastq/g"`
-		#split-paired-reads.py -0 $orphan -1 $forward -2 $reverse --gzip $file
-		./deinterleave_fastq.sh < $file $forward $reverse 
-done
-
 mkdir data/itags
 cd data/itags
-ln -s ../*itags*/Raw_Data/* .
+ln -s ../*/*/Data/Intensities/BaseCalls/*fastq.gz .
